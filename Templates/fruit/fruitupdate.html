@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+{%load static%}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{%static 'css/style.css'%}">
+    <title>BugsBird-Edit</title>
+</head>
+<body>
+<h1 id="toph">Bug'sBird Fruit shop</h1>
+<a href="{%url 'create'%}"><img src="/static/images/back button.PNG" style="height:45px; width:55px;margin-left:25%;margin-top:2%; border-radius:12px;"></a>
+<div class="upbox">
+    <h4>Edit fruit details</h4>
+    <form action="" method="post">
+                {%csrf_token%}
+                {{form.as_p}}
+    <input id="cte" type="submit"  value="update">
+</form>
+</div>
+
+
+</body>
+</html>

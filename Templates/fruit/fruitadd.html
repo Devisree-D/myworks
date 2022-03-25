@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+{%load static%}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{%static 'css/style.css'%}">
+    <title>FRUITS SHOP</title>
+</head>
+<body>
+<div class="toph1"><h1 id="toph">Bug'sBird Fruit shop</h1></div>
+
+<h2 id="tops">Hi, {{request.user}}</h2>
+
+<div class="addbox">
+    <h4>Enter fruit details</h4>
+    <form action="" method="post">
+        {%csrf_token%}
+        {{form.as_p}}
+        <input id="cte" type="submit" value="create">
+    </form><br>
+    <button id="lout" type="submit"> <a href="{%url 'out'%}">logout</a></button>
+</div>
+
+</div>
+<br>
+<div class="tbl">
+    <table class="table">
+            <tr>
+                <td style="font-weight:bold;">Fruit Name</td>
+                <td style="font-weight:bold;">Place</td>
+                <td style="font-weight:bold;">Quantity</td>
+                <td style="font-weight:bold;">Cost (per Kg)</td>
+                <td style="font-weight:bold;"> </td>
+                <td style="font-weight:bold;"> </td>
+                <td style="font-weight:bold;"> </td>
+
+            </tr>
+
+
+                        {%for fruit in fruits%}
+                    <tr>
+                        <td>{{fruit.fruit_name}}</td>
+                        <td>{{fruit.place}}</td>
+                        <td>{{fruit.quantity}}</td>
+                        <td>{{fruit.cost}}</td>
+                        <td ><a href="{%url 'clsdetail' fruit.id%}" style="font-weight:bold; color:blue;">View</a> </td>
+                        <td><a href="{%url 'clsupdate' fruit.id%}"  style="font-weight:bold; color:blue;">Update</a> </td>
+                        <td ><a href="{%url 'clsdelete' fruit.id%}" style="font-weight:bold; color:red;">Delete</a> </td>
+
+                    </tr>
+                        {%endfor%}
+                    </table>
+
+            </div>
+
+
+</body>
+</html>

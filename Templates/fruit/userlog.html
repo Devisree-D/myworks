@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+{%load static%}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{%static 'css/style.css'%}">
+    <title>User Login Page</title>
+</head>
+<body>
+<h1 id="toph">Bug'sBird Fruit shop</h1>
+<div class="logbox">
+    <h1>Please Login Here!!</h1>
+<form action="" method="post">
+
+                {%csrf_token%}
+                {{form.as_p}}
+                 <input type="submit" id="bt1" value="login"><br>
+    <h5 style="margin-left:10%;">New User?? click register</h5>
+    <button id="bt2" type="submit"><a href="{%url 'register'%}">register</a> </button>
+                </form>
+
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+{%load static%}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{%static 'css/style.css'%}">
+    <title>BugsBird-View</title>
+</head>
+<body>
+<h1 id="toph">Bug'sBird Fruit shop</h1>
+<a href="{%url 'create'%}"><img src="/static/images/back button.PNG" style="height:45px; width:55px;margin-left:25%;margin-top:2%; border-radius:12px;"></a>
+<div class="vbox">
+    <h1>Fruit {{fruit.fruit_name}}</h1>
+<ul>
+    <li><h3>Place: {{fruit.place}}</h3></li>
+    <li><h3>Quantity: {{fruit.quantity}}</h3></li>
+    <li><h3>Cost (per Kg): {{fruit.cost}}</h3></li>
+
+</ul>
+</div>
+
+</body>
+</html>

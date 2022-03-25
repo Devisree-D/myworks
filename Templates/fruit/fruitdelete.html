@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+{%load static%}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{%static 'css/style.css'%}">
+    <title>Bug'sBird-Delete</title>
+</head>
+<body>
+<div class="toph1"><h1 id="toph">Bug'sBird Fruit shop</h1></div><br>
+
+<div class="debox">
+    <form action="" method="post">
+    {%csrf_token%}
+    {{form.as_p}}
+        <br><h3 id="msg">Are you sure u want to delete Fruit {{fruit.fruit_name}}?</h3>
+        <div>
+            <button id="del" type="submit"> <a href="{%url 'delete'%}">delete</a></button>
+            <button id="can" type="submit"> <a href="{%url 'create'%}">cancel</a></button>
+        </div>
+</form>
+</div>
+
+
+</body>
+</html>
